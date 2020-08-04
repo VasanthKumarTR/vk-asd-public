@@ -1,4 +1,4 @@
-$url= "https://centralus206624asdjackfa.blob.core.windows.net/windows-2016-template/IMAGE_HX_AGENT_WIN_30.19.6.zip?sp=r&st=2020-07-21T18:07:12Z&se=2020-07-29T02:07:12Z&spr=https&sv=2019-10-10&sr=b&sig=q6FKbcYATeqtpX1RUJO%2F4jC5f38a%2BqkV1XHSUVunTXc%3D"
+$url= "https://centralus206624asdjackfa.blob.core.windows.net/windows-2016-template/IMAGE_HX_AGENT_WIN_30.19.6.zip?sp=r&st=2020-07-29T16:07:40Z&se=2020-08-06T00:07:40Z&spr=https&sv=2019-12-12&sr=b&sig=Dx%2FUzhgaw7wFL6WDsVes07M%2BYPLXPOhgsdCcidmhL88%3D"
 $zipfile= "C:\Windows\temp\fireeye_agent.zip"
 $outpath= "C:\Windows\temp\fireeye_agent"
 $registeragent = "C:\Windows\temp\enable_fireeye.bat"
@@ -10,7 +10,7 @@ Write-Host "Unzipping Fireeye Agent"
 Expand-Archive -LiteralPath $zipfile -DestinationPath $outpath
 
 Write-Host "Installing Fireeye Agent"
-Start-Process msiexec.exe -Wait -ArgumentList '/i C:\Windows\Temp\fireeye_agent\xagtSetup_30.19.6_universal.msi INSTALLSERVICE=2'
+Start-Process msiexec.exe -Wait -ArgumentList '/i C:\Windows\Temp\fireeye_agent\xagtSetup_30.19.6_universal.msi'
 
 # Show scheduled task history
 $logName = 'Microsoft-Windows-TaskScheduler/Operational'
